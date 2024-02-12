@@ -13,6 +13,9 @@ return {
 			h = {
 				name = "Harpoon", -- Sets the name for the "<leader>h" prefix
 			},
+      w = {
+        name = "Window"
+      },
 		}, { prefix = "<leader>" })
 	end,
 }
