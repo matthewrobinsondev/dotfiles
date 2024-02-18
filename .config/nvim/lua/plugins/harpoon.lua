@@ -4,6 +4,11 @@ return {
 	config = function()
 		local mark = require("harpoon.mark")
 		local ui = require("harpoon.ui")
+		local term = require("harpoon.term")
+
+		vim.keymap.set("n", "<leader>ht", function()
+			term.gotoTerminal(1)
+		end, { desc = "Go to terminal" })
 
 		vim.keymap.set("n", "<leader>ha", function()
 			mark.add_file()
@@ -17,6 +22,7 @@ return {
 			ui.toggle_quick_menu()
 		end, { desc = "Toggle" })
 
+		-- Harpoon Bindings to quick files
 		vim.keymap.set("n", "<leader>1", function()
 			ui.nav_file(1)
 		end, { desc = "Switch to harpoon 2" })
