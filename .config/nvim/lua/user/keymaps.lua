@@ -47,3 +47,6 @@ vim.keymap.set('n', 'U', '<C-r>')
 -- keep in the middle when searching
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
+
+-- Screen shot of code
+vim.keymap.set('v', '<leader>cn', ':CarbonNow<CR>', { silent = true, desc = 'Take Carbon Screenshot' })
