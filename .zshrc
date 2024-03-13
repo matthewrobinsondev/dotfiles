@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias sail="vendor/bin/sail"
 alias bat="batcat"
+alias nvimconf="cd ~/.config/nvim && nvim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
