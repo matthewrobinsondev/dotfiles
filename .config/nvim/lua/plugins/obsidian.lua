@@ -13,5 +13,20 @@ return {
         path = '~/Documents/obsidian',
       },
     },
+    daily_notes = {
+      folder = 'Daily',
+      template = 'Daily Template.md',
+    },
+    templates = {
+      subdir = 'Templates',
+      date_format = '%Y-%m-%d',
+      time_format = '%H:%M',
+      substitutions = {
+        -- Could add weekly, monthly etc
+        yesterday = function()
+          return os.date('%Y-%m-%d', os.time() - 24 * 60 * 60)
+        end,
+      },
+    },
   },
 }
