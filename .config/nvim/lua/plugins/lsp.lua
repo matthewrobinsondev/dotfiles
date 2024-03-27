@@ -92,6 +92,14 @@ return { -- LSP Configuration & Plugins
     --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+
+    local get_intelephense_license = function()
+      local f = assert(io.open(os.getenv 'HOME' .. '/intelephense/licence.txt', 'rb'))
+      local content = f:read '*a'
+      f:close()
+      return string.gsub(content, '%s+', '')
+    end
+
     local servers = {
       -- clangd = {},
       gopls = {},
@@ -105,7 +113,11 @@ return { -- LSP Configuration & Plugins
       -- But for many setups, the LSP (`tsserver`) will work just fine
       -- tsserver = {},
       marksman = {},
-      intelephense = {},
+      intelephense = {
+        init_options = {
+          licenseKey = get_intelephense_license(),
+        },
+      },
 
       lua_ls = {
         -- cmd = {...},
