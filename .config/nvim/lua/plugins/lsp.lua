@@ -4,11 +4,10 @@ return { -- LSP Configuration & Plugins
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
-
-    -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { 'j-hui/fidget.nvim', opts = {} },
   },
   config = function()
+    vim.filetype.add { extension = { templ = 'templ' } }
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
@@ -95,6 +94,7 @@ return { -- LSP Configuration & Plugins
     local servers = {
       -- clangd = {},
       gopls = {},
+      templ = {},
       -- pyright = {},
       -- rust_analyzer = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -106,7 +106,24 @@ return { -- LSP Configuration & Plugins
       -- tsserver = {},
       marksman = {},
       intelephense = {},
-
+      html = {
+        filetypes = {
+          'html',
+          'templ',
+        },
+      },
+      tailwindcss = {
+        filetypes = {
+          'templ',
+          'javascript',
+          'typescript',
+        },
+        init_options = {
+          userlanguage = {
+            templ = 'html',
+          },
+        },
+      },
       lua_ls = {
         -- cmd = {...},
         -- filetypes { ...},
