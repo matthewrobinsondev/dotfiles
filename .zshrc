@@ -118,3 +118,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+# Turso
+export PATH="/home/matt/.turso:$PATH"
