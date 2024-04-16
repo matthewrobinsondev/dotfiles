@@ -2,10 +2,10 @@
 program = "/bin/zsh"  # Example for Linux/BSD/macOS
 
 [font]
-size = 15
+size = 14
 
 [font.normal]
-family = "UbuntuMono Nerd Font"
+family = "FiraMono Nerd Font"
 
 [window]
 decorations = "none"
