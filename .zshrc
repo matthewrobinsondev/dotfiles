@@ -102,6 +102,7 @@ source $ZSH/oh-my-zsh.sh
 alias sail="vendor/bin/sail"
 alias bat="batcat"
 alias nvimconf="cd ~/.config/nvim && nvim"
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -121,3 +122,6 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # Turso
 export PATH="/home/matt/.turso:$PATH"
+
+# Zoxide
+eval "$(zoxide init zsh)"
