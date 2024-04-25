@@ -16,10 +16,6 @@ vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---
---  See `:help wincmd` for a list of all window commands
 -- remap moving windows, splitting and closing
 vim.keymap.set('n', '<leader>wh', '<C-w>h', { silent = true, desc = 'Move to left window' })
 vim.keymap.set('n', '<leader>wj', '<C-w>j', { silent = true, desc = 'Move to bottom window' })
@@ -51,3 +47,11 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Screen shot of code
 vim.keymap.set('v', '<leader>cn', ':CarbonNow<CR>', { silent = true, desc = 'Take Carbon Screenshot' })
+
+-- vim-fugitive
+vim.keymap.set('n', '<leader>gb', '<cmd>Git blame -w<cr>')
+vim.keymap.set('n', '<leader>gp', '<cmd>Git push<cr>')
+vim.keymap.set('n', '<leader>gc', ':Git checkout ')
+vim.keymap.set('n', '<leader>gs', ':G<cr>')
+vim.keymap.set('n', 'g[', '<cmd>diffget //2<cr>')
+vim.keymap.set('n', 'g]', '<cmd>diffget //3<cr>')
