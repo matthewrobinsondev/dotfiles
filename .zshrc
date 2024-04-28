@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 alias sail="vendor/bin/sail"
 alias bat="batcat"
 alias nvimconf="cd ~/.config/nvim && nvim"
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time"
+alias ls="eza -a --color=always --long --git --no-filesize --icons=always --no-time"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
