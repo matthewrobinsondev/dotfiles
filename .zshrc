@@ -125,3 +125,6 @@ export PATH="/home/matt/.turso:$PATH"
 
 # Zoxide
 eval "$(zoxide init zsh)"
+
+# Asdf (Programming language manager)
+. "$HOME/.asdf/asdf.sh"

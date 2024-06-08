@@ -7,6 +7,8 @@ return {
     { 'j-hui/fidget.nvim', opts = {} },
   },
   config = function()
+    -- Gleam doesn't work with mason so directly install here
+    require('lspconfig').gleam.setup {}
     vim.filetype.add { extension = { templ = 'templ' } }
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
@@ -75,7 +77,7 @@ return {
       end,
     })
 
-   local capabilities = vim.lsp.protocol.make_client_capabilities()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     local get_intelephense_license = function()
