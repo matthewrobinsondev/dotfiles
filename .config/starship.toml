@@ -1,0 +1,99 @@
+add_newline = false
+
+[aws]
+symbol = "  "
+disabled = true
+
+[c]
+symbol = " "
+
+[directory]
+read_only = " 󰌾"
+
+[docker_context]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+format = '[ ](bold cyan)'
+
+[gleam]
+format = 'via [⭐ $version](bold red) '
+
+[hostname]
+ssh_symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Arch = " "
+Debian = " "
+Fedora = " "
+Linux = " "
+Macos = " "
+NixOS = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rust]
+symbol = " "
+
+# [palettes.catppuccin_mocha]
+# rosewater = "#f5e0dc"
+# flamingo = "#f2cdcd"
+# pink = "#f5c2e7"
+# mauve = "#cba6f7"
+# red = "#f38ba8"
+# maroon = "#eba0ac"
+# peach = "#fab387"
+# yellow = "#f9e2af"
+# green = "#a6e3a1"
+# teal = "#94e2d5"
+# sky = "#89dceb"
+# sapphire = "#74c7ec"
+# blue = "#89b4fa"
+# lavender = "#b4befe"
+# text = "#cdd6f4"
+# subtext1 = "#bac2de"
+# subtext0 = "#a6adc8"
+# overlay2 = "#9399b2"
+# overlay1 = "#7f849c"
+# overlay0 = "#6c7086"
+# surface2 = "#585b70"
+# surface1 = "#45475a"
+# surface0 = "#313244"
+# base = "#1e1e2e"
+# crust = "#11111b"
+# mantle = "#181825"
