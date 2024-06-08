@@ -1,5 +1,5 @@
 [shell]
-program = "/bin/zsh"  # Example for Linux/BSD/macOS
+program = "/bin/zsh" # Example for Linux/BSD/macOS
 
 [font]
 size = 14
@@ -12,3 +12,6 @@ decorations = "none"
 opacity = 0.8
 startup_mode = "Maximized"
 padding = { x = 15, y = 28 }
+
+[env]
+term = "xterm-256color"
