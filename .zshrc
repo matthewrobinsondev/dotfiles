@@ -1,3 +1,7 @@
+# Use for profiling & debugging
+# zmodload zsh/zprof
+
+start_time=$(date +%s%3N)
 
 # ZINIT Plugin stuff
 # Set the directory we want to store zinit and plugins
@@ -28,11 +32,13 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::aws
 zinit snippet OMZP::command-not-found
 
-# Load completions
-autoload -Uz compinit && compinit
-
-# Clear cache on completion replays
-zinit cdreplay -q
+# Optimize compinit
+autoload -Uz compinit
+if [[ ! -f ~/.zcompdump || ~/.zcompdump -ot ~/.zshrc ]]; then
+  compinit -u
+else
+  compinit -C
+fi
 
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -93,3 +99,10 @@ export TERM="xterm-256color"
 # Start starship prompt
 eval "$(starship init zsh)"
 
+# Print start time on prompt
+end_time=$(date +%s%3N)
+elapsed_time=$((end_time - start_time))
+echo "Starship prompt startup time: ${elapsed_time}ms"
+
+# Use for profiling & debugging
+# zprof
