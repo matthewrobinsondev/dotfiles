@@ -4,6 +4,9 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+-- font
+config.font = wezterm.font("Fira Code")
+
 -- Change leader key
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
 -- This is where you actually apply your config choices
@@ -11,7 +14,7 @@ config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
 -- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Mocha"
 config.hide_tab_bar_if_only_one_tab = true
-config.font_size = 16.0
+config.font_size = 14.0
 config.window_background_opacity = 0.8
 config.window_padding = {
 	left = "3cell",
