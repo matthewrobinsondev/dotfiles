@@ -25,6 +25,7 @@ zinit light Aloxaf/fzf-tab
 # Hotkeys for auto suggest
 bindkey '^w' autosuggest-execute
 bindkey '^e' autosuggest-accept
+bindkey '^u' autosuggest-toggle
 
 # Add in snippets
 zinit snippet OMZP::git

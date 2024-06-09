@@ -9,9 +9,7 @@ config.font = wezterm.font("Fira Code")
 
 -- Change leader key
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
--- This is where you actually apply your config choices
 
--- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Mocha"
 config.hide_tab_bar_if_only_one_tab = true
 config.font_size = 14.0
@@ -31,17 +29,8 @@ end)
 
 -- to view all keybindings at any time
 -- wezterm show-keys --lua
+
 config.keys = {
-	{
-		key = "n",
-		mods = "LEADER",
-		action = act.SwitchToWorkspace({
-			name = "monitoring",
-			spawn = {
-				args = { "top" },
-			},
-		}),
-	},
 	{
 		key = "w",
 		mods = "LEADER",
@@ -99,25 +88,25 @@ config.keys = {
 		action = act.SpawnTab("CurrentPaneDomain"),
 	},
 	-- navigate tabs
-	{ key = "1", mods = "LEADER", action = act.ActivateTab(0) },
-	{ key = "2", mods = "LEADER", action = act.ActivateTab(1) },
-	{ key = "3", mods = "LEADER", action = act.ActivateTab(2) },
-	{ key = "4", mods = "LEADER", action = act.ActivateTab(3) },
-	{ key = "5", mods = "LEADER", action = act.ActivateTab(4) },
-	{ key = "6", mods = "LEADER", action = act.ActivateTab(5) },
-	{ key = "7", mods = "LEADER", action = act.ActivateTab(6) },
-	{ key = "8", mods = "LEADER", action = act.ActivateTab(7) },
-	{ key = "9", mods = "LEADER", action = act.ActivateTab(-1) },
+	{ key = "1",          mods = "LEADER",     action = act.ActivateTab(0) },
+	{ key = "2",          mods = "LEADER",     action = act.ActivateTab(1) },
+	{ key = "3",          mods = "LEADER",     action = act.ActivateTab(2) },
+	{ key = "4",          mods = "LEADER",     action = act.ActivateTab(3) },
+	{ key = "5",          mods = "LEADER",     action = act.ActivateTab(4) },
+	{ key = "6",          mods = "LEADER",     action = act.ActivateTab(5) },
+	{ key = "7",          mods = "LEADER",     action = act.ActivateTab(6) },
+	{ key = "8",          mods = "LEADER",     action = act.ActivateTab(7) },
+	{ key = "9",          mods = "LEADER",     action = act.ActivateTab(-1) },
 	-- navigate panes
-	{ key = "h", mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Left") },
-	{ key = "l", mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Right") },
-	{ key = "k", mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Up") },
-	{ key = "j", mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Down") },
+	{ key = "h",          mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Left") },
+	{ key = "l",          mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Right") },
+	{ key = "k",          mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Up") },
+	{ key = "j",          mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Down") },
 	-- expand panes
-	{ key = "LeftArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Left", 1 }) },
+	{ key = "LeftArrow",  mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Left", 1 }) },
 	{ key = "RightArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Right", 1 }) },
-	{ key = "UpArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Up", 1 }) },
-	{ key = "DownArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Down", 1 }) },
+	{ key = "UpArrow",    mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Up", 1 }) },
+	{ key = "DownArrow",  mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Down", 1 }) },
 }
 -- and finally, return the configuration to wezterm
 return config
