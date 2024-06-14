@@ -2,6 +2,8 @@
 # zmodload zsh/zprof
 
 start_time=$(date +%s%3N)
+# Zoxide
+eval "$(zoxide init zsh --no-aliases)"
 
 # ZINIT Plugin stuff
 # Set the directory we want to store zinit and plugins
@@ -54,6 +56,7 @@ alias bat="batcat"
 alias nvimconf="cd ~/.config/nvim && nvim"
 alias ls="eza -a --color=always --long --git --no-filesize --icons=always --no-time"
 alias c="clear"
+alias lzd='lazydocker'
 
 # History
 HISTSIZE=5000
@@ -88,8 +91,6 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 # Turso
 export PATH="/home/matt/.turso:$PATH"
 
-# Zoxide
-eval "$(zoxide init zsh)"
 
 # Asdf (Programming language manager)
 . "$HOME/.asdf/asdf.sh"

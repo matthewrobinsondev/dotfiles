@@ -43,6 +43,7 @@ symbol = " "
 
 [nodejs]
 symbol = " "
+format = 'via [$symbol]($style) '
 
 [ocaml]
 symbol = " "
@@ -63,6 +64,7 @@ symbol = "󰏗 "
 
 [php]
 symbol = " "
+format = 'via [$symbol]($style) '
 
 [python]
 symbol = " "
