@@ -12,7 +12,7 @@ config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
 
 config.color_scheme = "rose-pine-moon"
 config.font_size = 14.0
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.9
 config.window_decorations = "RESIZE"
 config.window_padding = {
 	left = "3cell",
@@ -239,10 +239,10 @@ config.keys = {
 	{ key = "8", mods = "LEADER", action = act.ActivateTab(7) },
 	{ key = "9", mods = "LEADER", action = act.ActivateTab(-1) },
 	-- navigate panes
-	{ key = "h", mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Left") },
-	{ key = "l", mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Right") },
-	{ key = "k", mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Up") },
-	{ key = "j", mods = "SHIFT|CTRL", action = act.ActivatePaneDirection("Down") },
+	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
+	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
+	{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
+	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
 	-- expand panes
 	{ key = "LeftArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Left", 1 }) },
 	{ key = "RightArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Right", 1 }) },

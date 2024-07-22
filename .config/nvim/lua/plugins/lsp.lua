@@ -4,6 +4,7 @@ return {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
+    'https://gitlab.com/schrieveslaach/sonarlint.nvim',
     { 'j-hui/fidget.nvim', opts = {} },
   },
   config = function()
@@ -142,6 +143,25 @@ return {
 
     require('mason').setup()
 
+    require('sonarlint').setup {
+      server = {
+        cmd = {
+          'sonarlint-language-server',
+          -- Ensure that sonarlint-language-server uses stdio channel
+          '-stdio',
+          '-analyzers',
+          vim.fn.expand '$MASON/share/sonarlint-analyzers/sonarphp.jar',
+          vim.fn.expand '$MASON/share/sonarlint-analyzers/sonarjs.jar',
+          vim.fn.expand '$MASON/share/sonarlint-analyzers/sonargo.jar',
+        },
+      },
+      filetypes = {
+        'php',
+        'go',
+        'typescript',
+        'javascript',
+      },
+    }
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
