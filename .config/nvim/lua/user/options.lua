@@ -73,12 +73,6 @@ vim.opt.scrolloff = 10
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 
--- Enable 24-bit color
-vim.opt.termguicolors = true
-
--- Place a column line
-vim.opt.colorcolumn = '140'
-
 -- Set fold settings
 -- These options were reccommended by nvim-ufo
 -- See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
