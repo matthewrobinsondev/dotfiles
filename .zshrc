@@ -3,7 +3,7 @@
 
 start_time=$(date +%s%3N)
 # Zoxide
-eval "$(zoxide init zsh --no-aliases)"
+eval "$(zoxide init zsh)"
 
 # ZINIT Plugin stuff
 # Set the directory we want to store zinit and plugins

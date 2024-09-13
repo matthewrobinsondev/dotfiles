@@ -91,8 +91,7 @@ return {
     local servers = {
       gopls = {},
       templ = {},
-      tsserver = {},
-      marksman = {},
+      -- tsserver = {},
       html = {
         filetypes = {
           'html',

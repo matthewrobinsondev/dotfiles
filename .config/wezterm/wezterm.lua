@@ -13,7 +13,7 @@ config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
 config.color_scheme = "rose-pine-moon"
 config.font_size = 14.0
 config.window_background_opacity = 0.9
-config.window_decorations = "RESIZE"
+config.window_decorations = "NONE"
 config.window_padding = {
 	left = "3cell",
 	right = "3cell",
