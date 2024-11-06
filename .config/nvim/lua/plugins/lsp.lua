@@ -89,8 +89,19 @@ return {
     end
 
     local servers = {
-      gopls = {},
+      gopls = {
+        settings = {
+          gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            analyses = {
+              unusedParameter = true,
+            },
+          },
+        },
+      },
       templ = {},
+      csharp_ls = {},
       -- tsserver = {},
       html = {
         filetypes = {
