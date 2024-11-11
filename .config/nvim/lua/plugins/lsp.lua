@@ -163,6 +163,7 @@ return {
           vim.fn.expand '$MASON/share/sonarlint-analyzers/sonarphp.jar',
           vim.fn.expand '$MASON/share/sonarlint-analyzers/sonarjs.jar',
           vim.fn.expand '$MASON/share/sonarlint-analyzers/sonargo.jar',
+          vim.fn.expand '$MASON/share/sonarlint-analyzers/sonarlintomnisharp.jar',
         },
       },
       filetypes = {
@@ -170,6 +171,7 @@ return {
         'go',
         'typescript',
         'javascript',
+        'cs',
       },
     }
     -- You can add other tools here that you want Mason to install
