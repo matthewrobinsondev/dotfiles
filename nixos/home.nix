@@ -58,6 +58,7 @@
     # ".screenrc".source = dotfiles/screenrc;
 
     ".zshrc".source = ../.zshrc;
+    ".config/starship.toml".source = ../.config/starship.toml;
     ".config/wezterm/wezterm.lua".source = ../.config/wezterm/wezterm.lua;
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
