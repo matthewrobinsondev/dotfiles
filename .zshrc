@@ -94,7 +94,8 @@ export PATH="/home/matt/.turso:$PATH"
 
 
 # Asdf (Programming language manager)
-. "$HOME/.asdf/asdf.sh"
+# . "$HOME/.asdf/asdf.sh"
+. "$HOME/.nix-profile/share/asdf-vm/asdf.sh"
 
 # Export colours for tmux
 export TERM="xterm-256color"

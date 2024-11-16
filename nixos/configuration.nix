@@ -81,8 +81,8 @@
   # services.xserver.libinput.enable = true;
 
 # enable flakes
-    nix.settings.experimental-features = ["nix-command" "flakes"];
-
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.allowed-users = ["matt"];
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.matt = {
     isNormalUser = true;
