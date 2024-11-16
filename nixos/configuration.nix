@@ -108,13 +108,9 @@
     dunst
     libnotify
     swww
-    wezterm
     rofi-wayland
     neovim
     git
-
-    #test moving config
-    neofetch
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -161,6 +157,11 @@
 #Hint electron apps to use wayland
 	  NIXOS_OZONE_WL = "1";
   };
+
+  # Set default shell to ZSH
+  environment.shells = with pkgs; [zsh];
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true;
 
   hardware = {
 #Opengl

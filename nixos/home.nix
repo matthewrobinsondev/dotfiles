@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -22,6 +22,11 @@
     # # "Hello, world!" when run.
     # pkgs.hello
 
+    inputs.wezterm.packages.${pkgs.system}.default
+    pkgs.maple-mono
+    pkgs.nerdfonts
+
+    pkgs.neofetch
     pkgs.fzf
     pkgs.zsh
     pkgs.eza
@@ -35,7 +40,6 @@
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -54,7 +58,7 @@
     # ".screenrc".source = dotfiles/screenrc;
 
     ".zshrc".source = ../.zshrc;
-
+    ".config/wezterm/wezterm.lua".source = ../.config/wezterm/wezterm.lua;
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
