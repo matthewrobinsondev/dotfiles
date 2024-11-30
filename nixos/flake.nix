@@ -9,7 +9,7 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-# custom flakes
+		# custom flakes
 		wezterm = {
 			url = "github:wez/wezterm/main?dir=nix";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -18,10 +18,10 @@
 
 	outputs = { self, nixpkgs, ... }@inputs: 
 		let
-		lib = nixpkgs.lib;
-	system = "x86_64-linux";
-	pkgs = nixpkgs.legacyPackages.${system};
-	customWezterm = inputs.wezterm.defaultPackage.${system}; # This will load the default package from the `wezterm` flake
+			lib = nixpkgs.lib;
+			system = "x86_64-linux";
+			pkgs = nixpkgs.legacyPackages.${system};
+			customWezterm = inputs.wezterm.defaultPackage.${system}; # This will load the default package from the `wezterm` flake
 		in {
 			nixosConfigurations.nixos = lib.nixosSystem {
 				specialArgs = {inherit inputs;};
@@ -37,7 +37,7 @@
 						./home.nix
 					];
 					extraSpecialArgs = {inherit inputs;};
+				};
 			};
 		};
-  };
 }

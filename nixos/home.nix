@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -36,6 +41,20 @@
     pkgs.zoxide
     pkgs.asdf-vm
 
+    # Required c compiler for treesitter
+    pkgs.gcc
+    pkgs.nixfmt-rfc-style
+    pkgs.rustup
+
+    pkgs.go
+    pkgs.php
+    pkgs.gleam
+    pkgs.erlang
+    pkgs.nodejs
+    pkgs.typescript
+    pkgs.lua
+    pkgs.dotnet-sdk_8
+
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -60,6 +79,7 @@
     ".zshrc".source = ../.zshrc;
     ".config/starship.toml".source = ../.config/starship.toml;
     ".config/wezterm/wezterm.lua".source = ../.config/wezterm/wezterm.lua;
+    ".config/nvim".source = ../.config/nvim;
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
@@ -88,7 +108,6 @@
   };
 
   programs.bash.enable = true;
-
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

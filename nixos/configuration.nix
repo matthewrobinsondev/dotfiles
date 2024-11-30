@@ -5,10 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -80,16 +80,22 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-# enable flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  nix.settings.allowed-users = ["matt"];
+  # enable flakes
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+  nix.settings.allowed-users = [ "matt" ];
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.matt = {
     isNormalUser = true;
     description = "matt";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -111,6 +117,7 @@
     rofi-wayland
     neovim
     git
+    unzip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -140,62 +147,62 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
-# Added for nvidia otherwise it would crash on load
-  services.xserver.videoDrivers = ["nvidia"];
-  boot.blacklistedKernelModules = ["nouveau"];
+  # Added for nvidia otherwise it would crash on load
+  services.xserver.videoDrivers = [ "nvidia" ];
+  boot.blacklistedKernelModules = [ "nouveau" ];
 
-# Hyprland 
+  # Hyprland 
   programs.hyprland = {
-	  enable = true;
-#nvidiaPatches = true;
-	  xwayland.enable = true;
+    enable = true;
+    #nvidiaPatches = true;
+    xwayland.enable = true;
   };
 
   environment.sessionVariables = {
-# If your cursor becomes invisible
-	  WLR_NO_HARDWARE_CURSORS = "1";
-#Hint electron apps to use wayland
-	  NIXOS_OZONE_WL = "1";
+    # If your cursor becomes invisible
+    WLR_NO_HARDWARE_CURSORS = "1";
+    #Hint electron apps to use wayland
+    NIXOS_OZONE_WL = "1";
   };
 
   # Set default shell to ZSH
-  environment.shells = with pkgs; [zsh];
+  environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
   hardware = {
-#Opengl
-	  opengl.enable = true;
+    #Opengl
+    opengl.enable = true;
 
   };
 
   hardware.nvidia = {
 
-# Modesetting is required.
-	  modesetting.enable = true;
+    # Modesetting is required.
+    modesetting.enable = true;
 
-# Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-# Enable this if you have graphical corruption issues or application crashes after waking
-# up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
-# of just the bare essentials.
-	  powerManagement.enable = false;
+    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
+    # Enable this if you have graphical corruption issues or application crashes after waking
+    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
+    # of just the bare essentials.
+    powerManagement.enable = false;
 
-# Fine-grained power management. Turns off GPU when not in use.
-# Experimental and only works on modern Nvidia GPUs (Turing or newer).
-	  powerManagement.finegrained = false;
+    # Fine-grained power management. Turns off GPU when not in use.
+    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
+    powerManagement.finegrained = false;
 
-# Use the NVidia open source kernel module (not to be confused with the
-# independent third-party "nouveau" open source driver).
-# Support is limited to the Turing and later architectures. Full list of 
-# supported GPUs is at: 
-# https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
-# Only available from driver 515.43.04+
-# Currently alpha-quality/buggy, so false is currently the recommended setting.
-	  open = false;
+    # Use the NVidia open source kernel module (not to be confused with the
+    # independent third-party "nouveau" open source driver).
+    # Support is limited to the Turing and later architectures. Full list of 
+    # supported GPUs is at: 
+    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
+    # Only available from driver 515.43.04+
+    # Currently alpha-quality/buggy, so false is currently the recommended setting.
+    open = false;
 
-# Enable the Nvidia settings menu,
-# accessible via `nvidia-settings`.
-	  nvidiaSettings = true;
+    # Enable the Nvidia settings menu,
+    # accessible via `nvidia-settings`.
+    nvidiaSettings = true;
   };
   xdg.portal.enable = true;
 
