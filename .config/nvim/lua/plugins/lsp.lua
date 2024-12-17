@@ -88,6 +88,9 @@ return {
       return string.gsub(content, '%s+', '')
     end
 
+    local pid = vim.fn.getpid()
+    local omnisharp_bin = '/usr/local/bin/omnisharp-roslyn/OmniSharp'
+
     local servers = {
       gopls = {
         settings = {
@@ -99,6 +102,10 @@ return {
             },
           },
         },
+      },
+      omnisharp = {
+        cmd = { omnisharp_bin, '--languageserver', '--hostPID', tostring(pid) },
+        capabilities = capabilities,
       },
       templ = {},
       csharp_ls = {},
