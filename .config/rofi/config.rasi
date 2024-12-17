@@ -2,7 +2,7 @@ configuration {
   display-drun: "Applications:";
   display-window: "Windows:";
   drun-display-format: "{icon} {name}";
-  font: "JetBrainsMono Nerd Font Medium 10";
+  font: "JetBrainsMono Nerd Font Medium 12";
   modi: "window,run,drun";
   show-icons: true;
 }
@@ -25,7 +25,8 @@ configuration {
 }
 
 window {
-  width: 30%;
+  width: 40%;
+  height: 30%;
   background-color: @bg;
 }
 
@@ -80,5 +81,3 @@ prompt {
   background-color: @bg-alt;
   text-color: @fg;
 }
-
-/* vim: ft=sass
