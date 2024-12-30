@@ -80,7 +80,8 @@ end)
 
 local function update_battery(widget)
 	awful.spawn.easy_async([[bash -c "acpi"]], function(stdout)
-		local status, percentage = stdout:match("Battery %d: (%w+), (%d+)%%")
+		local first_line = stdout:match("^[^\n]+") -- Only need first battery, for some reason external monitor shows up
+		local status, percentage = first_line:match("Battery 0: ([%w%s]+), (%d+)%%")
 		percentage = tonumber(percentage) or 0
 		local is_charging = status == "Charging"
 
@@ -93,7 +94,7 @@ local function update_battery(widget)
 			:get_children_by_id("text")[1]
 			:set_markup(string.format('<span color="%s"> %d%%%s</span>', color, percentage, charging_indicator))
 
-		if percentage < 15 and not is_charging then
+		if percentage < 15 and not is_charging and status ~= nil then
 			naughty.notify({
 				title = "Battery Low!",
 				text = "Battery level is " .. percentage .. "%\nPlease connect charger",
