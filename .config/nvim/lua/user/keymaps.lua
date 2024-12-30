@@ -55,3 +55,9 @@ vim.keymap.set('n', '<leader>gc', ':Git checkout ')
 vim.keymap.set('n', '<leader>gs', ':G<cr>')
 vim.keymap.set('n', 'g[', '<cmd>diffget //2<cr>')
 vim.keymap.set('n', 'g]', '<cmd>diffget //3<cr>')
+
+-- obsidian
+vim.keymap.set('n', '<leader>ot', ':ObsidianToday<CR>', { desc = '[O]bsidian [T]oday' })
+vim.keymap.set('n', '<leader>oy', ':ObsidianYesterday<CR>', { desc = '[O]bsidian [Y]esterday' })
+vim.keymap.set('n', '<leader>on', ':ObsidianNew<CR>', { desc = '[O]bsidian [N]ew' })
+vim.keymap.set('n', '<leader>oft', ':ObsidianNewFromTemplate<CR>', { desc = '[O]bsidian [F]rom [T]emplate' })
