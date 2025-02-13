@@ -94,17 +94,17 @@ local function update_battery(widget)
 			:get_children_by_id("text")[1]
 			:set_markup(string.format('<span color="%s"> %d%%%s</span>', color, percentage, charging_indicator))
 
-		if percentage < 15 and not is_charging and status ~= nil then
-			naughty.notify({
-				title = "Battery Low!",
-				text = "Battery level is " .. percentage .. "%\nPlease connect charger",
-				timeout = 10,
-				position = "top_right",
-				bg = "#ff0000",
-				fg = "#ffffff",
-				width = 300,
-			})
-		end
+		-- if percentage < 15 and not is_charging and status ~= nil then
+		-- 	naughty.notify({
+		-- 		title = "Battery Low!",
+		-- 		text = "Battery level is " .. percentage .. "%\nPlease connect charger",
+		-- 		timeout = 10,
+		-- 		position = "top_right",
+		-- 		bg = "#ff0000",
+		-- 		fg = "#ffffff",
+		-- 		width = 300,
+		-- 	})
+		-- end
 	end)
 end
 

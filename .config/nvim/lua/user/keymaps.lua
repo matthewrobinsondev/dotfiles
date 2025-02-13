@@ -61,3 +61,5 @@ vim.keymap.set('n', '<leader>ot', ':ObsidianToday<CR>', { desc = '[O]bsidian [T]
 vim.keymap.set('n', '<leader>oy', ':ObsidianYesterday<CR>', { desc = '[O]bsidian [Y]esterday' })
 vim.keymap.set('n', '<leader>on', ':ObsidianNew<CR>', { desc = '[O]bsidian [N]ew' })
 vim.keymap.set('n', '<leader>oft', ':ObsidianNewFromTemplate<CR>', { desc = '[O]bsidian [F]rom [T]emplate' })
+vim.keymap.set('n', '<leader>sot', ':ObsidianTags<CR>', { desc = '[S]earch [O]bsidian [T]ags' })
+vim.keymap.set('n', '<leader>sod', ':ObsidianDailies<CR>', { desc = '[S]earch [O]bsidian [D]ailies' })

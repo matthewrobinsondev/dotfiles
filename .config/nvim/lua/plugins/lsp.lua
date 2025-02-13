@@ -108,7 +108,7 @@ return {
         capabilities = capabilities,
       },
       templ = {},
-      csharp_ls = {},
+      -- csharp_ls = {},
       -- tsserver = {},
       html = {
         filetypes = {

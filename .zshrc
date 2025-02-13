@@ -109,3 +109,11 @@ echo "Starship prompt startup time: ${elapsed_time}ms"
 
 # Use for profiling & debugging
 # zprof
+#
+eval "$(ssh-agent -s)"
+for key in ~/.ssh/*; do
+  if [[ -f $key && ! $key =~ .pub$ ]]; then
+    ssh-add $key > /dev/null 2>&1
+  fi
+done
+

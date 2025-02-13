@@ -20,6 +20,7 @@ return {
       { '<leader>r_', hidden = true },
       { '<leader>s', group = '[S]earch' },
       { '<leader>s_', hidden = true },
+      { '<leader>so', group = '[O]bsidian' },
       { '<leader>w', group = '[W]indow' },
       { '<leader>w_', hidden = true },
     }
