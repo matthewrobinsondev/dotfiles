@@ -92,6 +92,8 @@ return {
     local omnisharp_bin = '/usr/local/bin/omnisharp-roslyn/OmniSharp'
 
     local servers = {
+      terraformls = {},
+      tflint = {},
       gopls = {
         settings = {
           gopls = {
