@@ -32,7 +32,7 @@ return {
         },
       }
 
-      vim.cmd.colorscheme 'catppuccin'
+      -- vim.cmd.colorscheme 'catppuccin'
     end,
   },
   {
@@ -76,6 +76,16 @@ return {
     config = function(plugin)
       vim.opt.rtp:append(plugin.dir .. '/packages/neovim')
       vim.cmd [[colorscheme aura-dark]]
+    end,
+  },
+  {
+    'vague2k/vague.nvim',
+    config = function()
+      require('vague').setup {
+        -- optional configuration here
+      }
+
+      vim.cmd.colorscheme 'vague'
     end,
   },
 }
