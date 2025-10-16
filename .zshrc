@@ -109,7 +109,6 @@ eval "$(starship init zsh)"
 #
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-source ~/projects/CareGuardian/misc/bash_functions
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
