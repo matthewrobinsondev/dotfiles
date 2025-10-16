@@ -1,11 +1,5 @@
 return {
   {
-    'projekt0n/github-nvim-theme',
-    config = function()
-      -- vim.cmd.colorscheme 'github_dark_default'
-    end,
-  },
-  {
     'catppuccin/nvim',
     lazy = false,
     config = function()
@@ -36,14 +30,6 @@ return {
     end,
   },
   {
-    'folke/tokyonight.nvim',
-    lazy = true, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
-      -- vim.cmd.colorscheme 'tokyonight-night'
-    end,
-  },
-  {
     'rose-pine/neovim',
     name = 'rose-pine',
     config = function()
@@ -60,32 +46,7 @@ return {
         },
       }
 
-      -- vim.cmd.colorscheme 'rose-pine-moon'
-    end,
-  },
-  {
-    'Mofiqul/dracula.nvim',
-    config = function()
-      -- vim.cmd.colorscheme 'dracula'
-    end,
-  },
-  {
-    'baliestri/aura-theme',
-    lazy = false,
-    priority = 1000,
-    config = function(plugin)
-      vim.opt.rtp:append(plugin.dir .. '/packages/neovim')
-      vim.cmd [[colorscheme aura-dark]]
-    end,
-  },
-  {
-    'vague2k/vague.nvim',
-    config = function()
-      require('vague').setup {
-        -- optional configuration here
-      }
-
-      vim.cmd.colorscheme 'vague'
+      vim.cmd.colorscheme 'rose-pine-dawn'
     end,
   },
 }

@@ -12,8 +12,6 @@ return {
       { '<leader>d_', hidden = true },
       { '<leader>g', group = '[G]it' },
       { '<leader>g_', hidden = true },
-      { '<leader>h', group = '[H]arpoon' },
-      { '<leader>h_', hidden = true },
       { '<leader>o', group = '[O]bsidian' },
       { '<leader>o_', hidden = true },
       { '<leader>r', group = '[R]ename' },

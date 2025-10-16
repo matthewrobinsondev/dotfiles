@@ -53,7 +53,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias sail="vendor/bin/sail"
-alias bat="batcat"
+# alias bat="batcat"
 alias nvimconf="cd ~/.config/nvim && nvim"
 alias ls="eza -a --color=always --long --git --no-filesize --icons=always --no-time"
 alias c="clear"
@@ -93,9 +93,6 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export PATH="/home/matt/.turso:$PATH"
 
 
-# Asdf (Programming language manager)
-. "$HOME/.asdf/asdf.sh"
-
 # Export colours for tmux
 export TERM="xterm-256color"
 
@@ -103,17 +100,22 @@ export TERM="xterm-256color"
 eval "$(starship init zsh)"
 
 # Print start time on prompt
-end_time=$(date +%s%3N)
-elapsed_time=$((end_time - start_time))
-echo "Starship prompt startup time: ${elapsed_time}ms"
+# end_time=$(date +%s%3N)
+# elapsed_time=$((end_time - start_time))
+# echo "Starship prompt startup time: ${elapsed_time}ms"
 
 # Use for profiling & debugging
 # zprof
 #
-eval "$(ssh-agent -s)"
-for key in ~/.ssh/*; do
-  if [[ -f $key && ! $key =~ .pub$ ]]; then
-    ssh-add $key > /dev/null 2>&1
-  fi
-done
+
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+source ~/projects/CareGuardian/misc/bash_functions
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/matthewrobinson/.lmstudio/bin"
+# End of LM Studio CLI section
 
