@@ -6,6 +6,8 @@ return {
     local wk = require 'which-key'
 
     wk.add {
+      { '<leader>a', group = '[A]i' },
+      { '<leader>a_', hidden = true },
       { '<leader>c', group = '[C]ode' },
       { '<leader>c_', hidden = true },
       { '<leader>d', group = '[D]ocument' },
