@@ -8,6 +8,7 @@ return {
       'nvim-lua/plenary.nvim',
     },
     opts = {
+      legacy_commands = false,
       ui = { enable = false },
       note_id_func = function(title)
         return title
