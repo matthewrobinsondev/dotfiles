@@ -1,6 +1,6 @@
 return {
   {
-    'epwalsh/obsidian.nvim',
+    'obsidian-nvim/obsidian.nvim',
     version = '*', -- recommended, use latest release instead of latest commit
     lazy = false,
     ft = 'markdown',
@@ -8,6 +8,8 @@ return {
       'nvim-lua/plenary.nvim',
     },
     opts = {
+      legacy_commands = false,
+      ui = { enable = false },
       note_id_func = function(title)
         return title
       end,
@@ -36,7 +38,9 @@ return {
   },
   {
     'MeanderingProgrammer/render-markdown.nvim',
-    opts = {},
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
   },
 }

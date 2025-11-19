@@ -14,25 +14,25 @@ return {
     vim.opt.autoread = true
 
     -- Recommended/example keymaps
-    vim.keymap.set({ 'n', 'x' }, '<leader>oa', function()
+    vim.keymap.set({ 'n', 'x' }, '<leader>aa', function()
       require('opencode').ask('@this: ', { submit = true })
     end, { desc = 'Ask about this' })
-    vim.keymap.set({ 'n', 'x' }, '<leader>o+', function()
+    vim.keymap.set({ 'n', 'x' }, '<leader>a+', function()
       require('opencode').prompt '@this'
     end, { desc = 'Add this' })
-    vim.keymap.set({ 'n', 'x' }, '<leader>os', function()
+    vim.keymap.set({ 'n', 'x' }, '<leader>as', function()
       require('opencode').select()
     end, { desc = 'Select prompt' })
-    vim.keymap.set('n', '<leader>ot', function()
+    vim.keymap.set('n', '<leader>at', function()
       require('opencode').toggle()
     end, { desc = 'Toggle embedded' })
-    vim.keymap.set('n', '<leader>on', function()
+    vim.keymap.set('n', '<leader>an', function()
       require('opencode').command 'session_new'
     end, { desc = 'New session' })
-    vim.keymap.set('n', '<leader>oi', function()
+    vim.keymap.set('n', '<leader>ai', function()
       require('opencode').command 'session_interrupt'
     end, { desc = 'Interrupt session' })
-    vim.keymap.set('n', '<leader>oA', function()
+    vim.keymap.set('n', '<leader>aA', function()
       require('opencode').command 'agent_cycle'
     end, { desc = 'Cycle selected agent' })
     vim.keymap.set('n', '<S-C-u>', function()
